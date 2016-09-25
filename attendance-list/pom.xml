@@ -16,7 +16,7 @@
     <description>Aplikácia na správu prezenčky.</description>
 
     <properties>
-        <exec.mainClass>sk.upjs.main.tools.contestmgr.MainFrame</exec.mainClass>
+        <exec.mainClass>sk.upjs.main.tools.attendance.MainFrame</exec.mainClass>
     </properties>
 
     <dependencies>
