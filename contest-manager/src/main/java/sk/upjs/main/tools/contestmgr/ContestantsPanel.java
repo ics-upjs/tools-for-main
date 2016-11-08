@@ -36,7 +36,12 @@ public class ContestantsPanel extends JPanel {
         this.contest = frame.getContest();
 
         this.tm = new AbstractTableModel() {
-            @Override
+            /**
+             * ID stlpca s menom sutaziaceho.
+             */
+        	private static final int NAME_COLUMN = 0;
+        	
+        	@Override
             public int getColumnCount() {
                 return 1;
             }
@@ -48,7 +53,7 @@ public class ContestantsPanel extends JPanel {
 
             @Override
             public Object getValueAt(int rowIndex, int columnIndex) {
-                if (columnIndex == 0) {
+                if (columnIndex == NAME_COLUMN) {
                     return contest.getContestant(rowIndex).getName();
                 }
 
@@ -57,7 +62,7 @@ public class ContestantsPanel extends JPanel {
 
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                if (columnIndex == 0) {
+                if (columnIndex == NAME_COLUMN) {
                     return true;
                 }
 
@@ -66,14 +71,14 @@ public class ContestantsPanel extends JPanel {
 
             @Override
             public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-                if (columnIndex == 0) {
+                if (columnIndex == NAME_COLUMN) {
                     contest.getContestant(rowIndex).setName(aValue.toString());
                 }
             }
 
             @Override
             public String getColumnName(int columnIndex) {
-                if (columnIndex == 0)
+                if (columnIndex == NAME_COLUMN)
                     return "Súťažiaci";
 
                 return null;
@@ -81,7 +86,7 @@ public class ContestantsPanel extends JPanel {
 
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                if (columnIndex == 0)
+                if (columnIndex == NAME_COLUMN)
                     return String.class;
 
                 return null;

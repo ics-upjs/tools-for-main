@@ -80,8 +80,7 @@ public class ContestSettingsPanel extends JPanel {
 	 */
 	private void storeContestParameters() {
 		contest.setTimerEnabled(timerEnabledCheck.isSelected());
-		contest.setDuration((Integer) hoursSpinner.getValue() * 3600
-				+ (Integer) minutesSpinner.getValue() * 60
+		contest.setDuration((Integer) hoursSpinner.getValue() * 3600 + (Integer) minutesSpinner.getValue() * 60
 				+ (Integer) secondsSpinner.getValue());
 		contest.setInitialRating((Integer) initialRatingSpinner.getValue());
 		contest.setParameterA((Integer) aSpinner.getValue());
@@ -130,10 +129,8 @@ public class ContestSettingsPanel extends JPanel {
 	 */
 	private void initComponents() {
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(UIManager
-				.getBorder("TitledBorder.border"),
-				"Trvanie s\u00FA\u0165a\u017Ee", TitledBorder.LEADING,
-				TitledBorder.TOP, null, Color.BLUE));
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Trvanie s\u00FA\u0165a\u017Ee",
+				TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLUE));
 
 		hoursSpinner = new JSpinner();
 		hoursSpinner.setModel(new SpinnerNumberModel(0, 0, 9, 1));
@@ -157,63 +154,41 @@ public class ContestSettingsPanel extends JPanel {
 			}
 		});
 		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(
-				Alignment.LEADING).addGroup(
-				gl_panel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(timerEnabledCheck,
-								GroupLayout.PREFERRED_SIZE, 22,
-								GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(hoursSpinner, GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addGap(2)
-						.addComponent(label, GroupLayout.PREFERRED_SIZE, 5,
-								GroupLayout.PREFERRED_SIZE)
-						.addGap(2)
-						.addComponent(minutesSpinner,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addGap(2)
-						.addComponent(lblNewLabel)
-						.addGap(2)
-						.addComponent(secondsSpinner,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(278, Short.MAX_VALUE)));
-		gl_panel.setVerticalGroup(gl_panel
-				.createParallelGroup(Alignment.LEADING)
-				.addComponent(timerEnabledCheck, GroupLayout.PREFERRED_SIZE,
-						19, GroupLayout.PREFERRED_SIZE)
-				.addGroup(
-						gl_panel.createParallelGroup(Alignment.BASELINE)
-								.addComponent(hoursSpinner,
-										GroupLayout.PREFERRED_SIZE,
-										GroupLayout.DEFAULT_SIZE,
+		gl_panel.setHorizontalGroup(
+				gl_panel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel.createSequentialGroup().addContainerGap()
+								.addComponent(timerEnabledCheck, GroupLayout.PREFERRED_SIZE, 22,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(label)
-								.addComponent(minutesSpinner,
-										GroupLayout.PREFERRED_SIZE,
-										GroupLayout.DEFAULT_SIZE,
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(hoursSpinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel)
-								.addComponent(secondsSpinner,
-										GroupLayout.PREFERRED_SIZE,
-										GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)));
+								.addGap(2)
+								.addComponent(label, GroupLayout.PREFERRED_SIZE, 5, GroupLayout.PREFERRED_SIZE)
+								.addGap(2)
+								.addComponent(minutesSpinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addGap(2).addComponent(lblNewLabel)
+								.addGap(2).addComponent(secondsSpinner, GroupLayout.PREFERRED_SIZE,
+										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(278, Short.MAX_VALUE)));
+		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+				.addComponent(timerEnabledCheck, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(hoursSpinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE)
+						.addComponent(label)
+						.addComponent(minutesSpinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel).addComponent(secondsSpinner, GroupLayout.PREFERRED_SIZE,
+								GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)));
 		panel.setLayout(gl_panel);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(UIManager
-				.getBorder("TitledBorder.border"), "Parametre",
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Parametre",
 				TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLUE));
 
 		JButton saveButton = new JButton("Ulo\u017Ei\u0165");
-		saveButton.setIcon(new ImageIcon(ContestSettingsPanel.class
-				.getResource("/images/save.png")));
+		saveButton.setIcon(new ImageIcon(ContestSettingsPanel.class.getResource("/images/save.png")));
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				saveSettingsToFile();
@@ -221,8 +196,7 @@ public class ContestSettingsPanel extends JPanel {
 		});
 
 		JButton loadButton = new JButton("Na\u010D\u00EDta\u0165");
-		loadButton.setIcon(new ImageIcon(ContestSettingsPanel.class
-				.getResource("/images/open.png")));
+		loadButton.setIcon(new ImageIcon(ContestSettingsPanel.class.getResource("/images/open.png")));
 		loadButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				loadSettingsFromFile();
@@ -230,57 +204,36 @@ public class ContestSettingsPanel extends JPanel {
 		});
 
 		JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new TitledBorder(UIManager
-				.getBorder("TitledBorder.border"),
-				"Vzdialen\u00E9 ovl\u00E1danie", TitledBorder.LEADING,
-				TitledBorder.TOP, null, Color.BLUE));
+		panel_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Vzdialen\u00E9 ovl\u00E1danie",
+				TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLUE));
 
 		JPanel panel_4 = new JPanel();
 		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(groupLayout
-				.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 456,
-						Short.MAX_VALUE)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 456,
-						Short.MAX_VALUE)
-				.addComponent(panel_3, GroupLayout.DEFAULT_SIZE, 456,
-						Short.MAX_VALUE)
-				.addGroup(
-						groupLayout.createSequentialGroup().addContainerGap()
-								.addComponent(saveButton)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(loadButton)
-								.addContainerGap(263, Short.MAX_VALUE))
-				.addComponent(panel_4, GroupLayout.DEFAULT_SIZE, 456,
-						Short.MAX_VALUE));
-		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(
-				Alignment.LEADING)
-				.addGroup(
-						groupLayout
-								.createSequentialGroup()
-								.addComponent(panel,
-										GroupLayout.PREFERRED_SIZE,
-										GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(panel_1,
-										GroupLayout.PREFERRED_SIZE, 180,
-										GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(panel_3,
-										GroupLayout.PREFERRED_SIZE, 83,
-										GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addGroup(
-										groupLayout
-												.createParallelGroup(
-														Alignment.BASELINE)
-												.addComponent(saveButton)
-												.addComponent(loadButton))
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addComponent(panel_4,
-										GroupLayout.PREFERRED_SIZE, 39,
-										Short.MAX_VALUE)));
+		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+				.addComponent(panel_3, GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+				.addGroup(groupLayout.createSequentialGroup().addContainerGap().addComponent(saveButton)
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(loadButton)
+						.addContainerGap(263, Short.MAX_VALUE))
+				.addComponent(panel_4, GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE));
+		groupLayout
+				.setVerticalGroup(
+						groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 180,
+												GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 83,
+												GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(saveButton).addComponent(loadButton))
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 39, Short.MAX_VALUE)));
 
 		JButton startButton = new JButton("Začať súťaž");
 		panel_4.add(startButton);
@@ -291,11 +244,9 @@ public class ContestSettingsPanel extends JPanel {
 			}
 		});
 		startButton.setForeground(Color.BLACK);
-		startButton.setFont(new Font("Arial Black", startButton.getFont()
-				.getStyle(), 15));
+		startButton.setFont(new Font("Arial Black", startButton.getFont().getStyle(), 15));
 
-		allowRemoteControlBox = new JCheckBox(
-				"Povoliť vzdialené ovládanie na porte");
+		allowRemoteControlBox = new JCheckBox("Povoliť vzdialené ovládanie na porte");
 		allowRemoteControlBox.setSelected(true);
 
 		portSpinner = new JSpinner();
@@ -306,146 +257,63 @@ public class ContestSettingsPanel extends JPanel {
 		passwordButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String result = (String) JOptionPane.showInputDialog(
-						ContestSettingsPanel.this.getRootPane().getParent(),
-						"Heslo na vzdialené ovládanie:", "Nastavenie hesla",
-						JOptionPane.INFORMATION_MESSAGE, null, null,
-						remotePassword);
+						ContestSettingsPanel.this.getRootPane().getParent(), "Heslo na vzdialené ovládanie:",
+						"Nastavenie hesla", JOptionPane.INFORMATION_MESSAGE, null, null, remotePassword);
 				if (result != null)
 					remotePassword = result;
 			}
 		});
 		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
-		gl_panel_3
-				.setHorizontalGroup(gl_panel_3
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(
-								gl_panel_3
-										.createSequentialGroup()
-										.addContainerGap()
-										.addGroup(
-												gl_panel_3
-														.createParallelGroup(
-																Alignment.LEADING)
-														.addGroup(
-																gl_panel_3
-																		.createSequentialGroup()
-																		.addComponent(
-																				allowRemoteControlBox)
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED)
-																		.addComponent(
-																				portSpinner,
-																				GroupLayout.PREFERRED_SIZE,
-																				60,
-																				GroupLayout.PREFERRED_SIZE))
-														.addComponent(
-																passwordButton))
-										.addContainerGap(183, Short.MAX_VALUE)));
-		gl_panel_3
-				.setVerticalGroup(gl_panel_3
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(
-								gl_panel_3
-										.createSequentialGroup()
-										.addGroup(
-												gl_panel_3
-														.createParallelGroup(
-																Alignment.BASELINE)
-														.addComponent(
-																allowRemoteControlBox)
-														.addComponent(
-																portSpinner,
-																GroupLayout.PREFERRED_SIZE,
-																GroupLayout.DEFAULT_SIZE,
-																GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(
-												ComponentPlacement.RELATED)
-										.addComponent(passwordButton)
-										.addContainerGap(
-												GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)));
+		gl_panel_3.setHorizontalGroup(gl_panel_3.createParallelGroup(Alignment.LEADING).addGroup(gl_panel_3
+				.createSequentialGroup().addContainerGap()
+				.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_3.createSequentialGroup().addComponent(allowRemoteControlBox)
+								.addPreferredGap(ComponentPlacement.RELATED).addComponent(portSpinner,
+										GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
+						.addComponent(passwordButton))
+				.addContainerGap(183, Short.MAX_VALUE)));
+		gl_panel_3.setVerticalGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_3.createSequentialGroup()
+						.addGroup(gl_panel_3.createParallelGroup(Alignment.BASELINE).addComponent(allowRemoteControlBox)
+								.addComponent(portSpinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(passwordButton)
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 		panel_3.setLayout(gl_panel_3);
 
 		JLabel lblNewLabel_1 = new JLabel("Po\u010Diato\u010Dn\u00FD rating:");
 
 		initialRatingSpinner = new JSpinner();
-		initialRatingSpinner.setModel(new SpinnerNumberModel(new Integer(1000),
-				null, null, new Integer(1)));
+		initialRatingSpinner.setModel(new SpinnerNumberModel(new Integer(1000), null, null, new Integer(1)));
 
 		JLabel lblNewLabel_2 = new JLabel("Vzorec zmeny ratingu:");
 
-		JLabel lblNewLabel_3 = new JLabel(
-				"a-b*(rating vyhr\u00E1vaj\u00FAceho - rating prehr\u00E1vaj\u00FAceho) / c");
+		JLabel lblNewLabel_3 = new JLabel("a-b*(rating vyhr\u00E1vaj\u00FAceho - rating prehr\u00E1vaj\u00FAceho) / c");
 		lblNewLabel_3.setFont(new Font("Times New Roman", Font.ITALIC, 13));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JPanel panel_2 = new JPanel();
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1
-				.setHorizontalGroup(gl_panel_1
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(
-								gl_panel_1
-										.createSequentialGroup()
-										.addContainerGap()
-										.addGroup(
-												gl_panel_1
-														.createParallelGroup(
-																Alignment.LEADING)
-														.addComponent(
-																panel_2,
-																Alignment.TRAILING,
-																GroupLayout.DEFAULT_SIZE,
-																414,
-																Short.MAX_VALUE)
-														.addComponent(
-																lblNewLabel_3,
-																GroupLayout.DEFAULT_SIZE,
-																414,
-																Short.MAX_VALUE)
-														.addGroup(
-																gl_panel_1
-																		.createSequentialGroup()
-																		.addComponent(
-																				lblNewLabel_1)
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED)
-																		.addComponent(
-																				initialRatingSpinner,
-																				GroupLayout.PREFERRED_SIZE,
-																				68,
-																				GroupLayout.PREFERRED_SIZE))
-														.addComponent(
-																lblNewLabel_2))
-										.addContainerGap()));
-		gl_panel_1
-				.setVerticalGroup(gl_panel_1
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(
-								gl_panel_1
-										.createSequentialGroup()
-										.addGroup(
-												gl_panel_1
-														.createParallelGroup(
-																Alignment.BASELINE)
-														.addComponent(
-																lblNewLabel_1)
-														.addComponent(
-																initialRatingSpinner,
-																GroupLayout.PREFERRED_SIZE,
-																GroupLayout.DEFAULT_SIZE,
-																GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(
-												ComponentPlacement.RELATED)
-										.addComponent(lblNewLabel_2)
-										.addPreferredGap(
-												ComponentPlacement.RELATED)
-										.addComponent(lblNewLabel_3)
-										.addGap(10)
-										.addComponent(panel_2,
-												GroupLayout.PREFERRED_SIZE, 79,
-												GroupLayout.PREFERRED_SIZE)
-										.addContainerGap(115, Short.MAX_VALUE)));
+		gl_panel_1.setHorizontalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup().addContainerGap()
+						.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addComponent(panel_2, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 414,
+										Short.MAX_VALUE)
+								.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+								.addGroup(gl_panel_1.createSequentialGroup().addComponent(lblNewLabel_1)
+										.addPreferredGap(ComponentPlacement.RELATED).addComponent(initialRatingSpinner,
+												GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE))
+								.addComponent(lblNewLabel_2))
+						.addContainerGap()));
+		gl_panel_1.setVerticalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(gl_panel_1
+				.createSequentialGroup()
+				.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE).addComponent(lblNewLabel_1).addComponent(
+						initialRatingSpinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE))
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblNewLabel_2)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblNewLabel_3).addGap(10)
+				.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+				.addContainerGap(115, Short.MAX_VALUE)));
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[] { 0, 0, 0 };
 		gbl_panel_2.rowHeights = new int[] { 0, 0, 0, 0 };
@@ -467,8 +335,7 @@ public class ContestSettingsPanel extends JPanel {
 		gbc_aSpinner.gridx = 1;
 		gbc_aSpinner.gridy = 0;
 		panel_2.add(aSpinner, gbc_aSpinner);
-		aSpinner.setModel(new SpinnerNumberModel(new Integer(100), null, null,
-				new Integer(1)));
+		aSpinner.setModel(new SpinnerNumberModel(new Integer(100), null, null, new Integer(1)));
 
 		JLabel lblParameterB = new JLabel("Parameter b:");
 		GridBagConstraints gbc_lblParameterB = new GridBagConstraints();
@@ -484,8 +351,7 @@ public class ContestSettingsPanel extends JPanel {
 		gbc_bSpinner.gridx = 1;
 		gbc_bSpinner.gridy = 1;
 		panel_2.add(bSpinner, gbc_bSpinner);
-		bSpinner.setModel(new SpinnerNumberModel(new Integer(1), null, null,
-				new Integer(1)));
+		bSpinner.setModel(new SpinnerNumberModel(new Integer(1), null, null, new Integer(1)));
 
 		JLabel lblParameterC = new JLabel("Parameter c:");
 		GridBagConstraints gbc_lblParameterC = new GridBagConstraints();
@@ -500,8 +366,7 @@ public class ContestSettingsPanel extends JPanel {
 		gbc_cSpinner.gridx = 1;
 		gbc_cSpinner.gridy = 2;
 		panel_2.add(cSpinner, gbc_cSpinner);
-		cSpinner.setModel(new SpinnerNumberModel(new Integer(3), null, null,
-				new Integer(1)));
+		cSpinner.setModel(new SpinnerNumberModel(new Integer(3), null, null, new Integer(1)));
 		panel_1.setLayout(gl_panel_1);
 		setLayout(groupLayout);
 	}
